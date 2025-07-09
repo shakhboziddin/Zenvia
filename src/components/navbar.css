@@ -13,8 +13,9 @@
   transform: translateX(-50%);
   border-radius: 40px;
   /* background-color: #050917;   */
-  background-color: #0C090A;
-
+  background-color: #0c090a98;
+backdrop-filter: blur(7.4px);
+-webkit-backdrop-filter: blur(7.4px);
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
   z-index: 100;
 }

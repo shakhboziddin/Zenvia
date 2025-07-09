@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Particles from 'react-particles';
 import { loadSlim } from 'tsparticles-slim'; // ✅ Light & stable version
 
-const words = ["scale your business", "win more clients", "grow faster", "lead with confidence", "close more deals", "accelerate growth"];
+const words = ["Scale Your Business", "Win More Clients", "Grow Faster", "Lead With Confidence", "Close More Deals", "Accelerate Growth"];
 
 function Home() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -31,7 +31,7 @@ function Home() {
           fullScreen: { enable: false },
           particles: {
             number: {
-              value: 60, // 🔽 fewer particles
+              value: 60,
               density: { enable: true, value_area: 1000 }
             },
             color: { value: "#ffffff" },
@@ -46,7 +46,7 @@ function Home() {
             },
             move: {
               enable: true,
-              speed: 1, // 🔼 a bit faster
+              speed: 1,
               direction: "none",
               random: true,
               outModes: { default: "out" },
@@ -62,7 +62,7 @@ function Home() {
           top: 0,
           left: 0,
           width: '100%',
-          height: '100%',
+          height: '100vh',
           zIndex: 0
         }}
       />
@@ -84,9 +84,7 @@ function Home() {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <h1 className='home_hero_header_h1'>
-              AI specialists trained to help you
-
-{' '}
+            AI specialists trained to help you{' '}
             <span className="word_fade_container">
               {words.map((word, index) => (
                 <span

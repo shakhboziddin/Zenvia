@@ -1,0 +1,202 @@
+/* ✅ Global variables and font smoothing (if you have them) */
+:root {
+  /* --accent: #91d203; */
+  --background: #0C090A;
+}
+
+/* ✅ Scoped heading styles */
+.app-heading {
+  font-family: sofia-pro, sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -3px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.app-subheading {
+  /* font-family: sofia-pro, sans-serif; */
+  margin: 0;
+  color: var(--accent);
+  left: calc(50% + 130px);
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -3px;
+  line-height: 1.2;
+  position: absolute;
+}
+
+/* ✅ Scoped section */
+.app-section {
+  position: relative;
+  width: 100%;
+  color: var(--accent);
+  margin: 0px auto 0px auto;
+  background-color: var(--background);
+}
+
+/* ✅ Parallax wrapper for fade effects */
+.parallax-wrapper {
+  position: relative;
+  width: 70%;
+  overflow: hidden;
+  margin: auto;
+}
+
+/* ✅ NEW Shadow Effect Added */
+.parallax::before,
+.parallax::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.parallax::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(12, 9, 10, 1),
+    rgba(12, 9, 10, 0.7),
+    rgba(12, 9, 10, 0.2),
+    transparent
+  );
+}
+
+.parallax::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(12, 9, 10, 1),
+    rgba(12, 9, 10, 0.7),
+    rgba(12, 9, 10, 0.2),
+    transparent
+  );
+}
+
+/* ✅ Scoped parallax styles */
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  width: 100%;
+  margin: auto;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  color: rgba(232, 232, 232, 0.498);
+  position: relative; /* For ::before/::after */
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.parallax-text {
+  display: block;
+  margin-right: 30px;
+}
+
+/* ✅ Scoped progress bar */
+.app-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--accent);
+  bottom: 100px;
+}
+
+/* ✅ Scoped footer */
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0) 1px,
+    var(--background) 1px
+  );
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.app-footer::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.2;
+}
+
+.app-footer svg {
+  margin-right: 20px;
+}
+
+.app-footer a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+/* ✅ Global code and scrollbars */
+code {
+  font-family: input-mono, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ✅ Responsive text sizing */
+@media (max-width: 1286px) {
+  .parallax .scroller {
+    font-size: 54px;
+  }
+    .parallax-wrapper {
+    width: 100%;
+  }
+}
+  .app-footer {
+    background: none;
+  } 
+
+  .parallax::before,
+  .parallax::after {
+    content: none !important; /* Completely disables pseudo-elements */
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+
+@media (max-width: 684px) {
+  .parallax .scroller {
+    font-size: 44px;
+  }
+
+  .parallax-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 522px) {
+  .parallax .scroller {
+    font-size: 34px;
+  }
+}

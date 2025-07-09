@@ -1,0 +1,360 @@
+.agent {
+  /* height: 400vh; */
+  background-color: #0C090A;
+  overflow: hidden;
+  padding-top: 280px;
+}
+
+.elipse_div {
+  background-image: url(../images/bg/Ellipse\ green.png);
+  width: 100%;
+  height: 200vh;
+  background-repeat: no-repeat;
+  top: 20vh;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+}
+
+.service_header_main {
+  width: 160px;
+  margin: auto;
+}
+
+.service_hero_ai {
+  padding: 7px 17px;
+  border-radius: 20px;
+  border-top: 1.5px solid #73E0A9;
+  border-right: 1px solid #73e0a994;
+  border-left: 1px solid #73e0a997;
+  border-bottom: 1px solid #73e0a95f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 100;
+}
+
+.service_hero_ai h3 {
+  font-weight: 200;
+  color: #eaeaea;
+  font-size: 16px;
+}
+
+.service_hero_ai_dot {
+  background-color: #10a315b1;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.service_hero_ai_dot_inside {
+  background-color: #0cbe12;
+  width: 7px;
+  height: 7px;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  border-radius: 50%;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+.service_hero_header {
+  color: white;
+  width: 50%;
+  text-align: center;
+  margin: 50px auto 0px auto;
+}
+
+.service_hero_header h1 {
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.service_hero_cards {
+  width: 75%;
+  margin: 40px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+.card {
+  border: 1px solid rgba(65, 65, 65, 0.493);
+  border-radius: 10px;
+  padding: 1.5rem;
+  background-color: #0d2b0e38;
+  color: white;
+  text-align: left;
+  width: 100%;
+  /* height: %; */
+  max-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card_icon {
+  font-size: 24px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #117a14c3;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_content_h1 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.card_content_p {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.card_content_button {
+  background-color: #08830c;
+  border: none;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.card_content_button:hover {
+  background-color: #5fd396;
+}
+
+/* ===== Popup ===== */
+
+.popup_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.card_content_popup {
+  background-color: #1e1e1e;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  animation: scaleFadeIn 0.3s ease-out;
+}
+
+.popup_close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.card_content_popup_h1 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.card_content_popup_p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media(max-width:1630px){
+  .service_hero_cards{
+    width: 80%;
+    gap: 20px;
+  }
+}
+@media(max-width:1530px){
+  .service_hero_cards{
+    gap: 10px;
+  }
+}
+@media(max-width: 1500px){
+  .service_hero_cards{
+    width: 90%;
+    gap: 30px;
+  }
+}
+@media(max-width: 1353px){
+  .service_hero_cards{
+    width: 75%;
+    grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto) ;
+  }
+}
+@media(max-width: 1198px){
+  .service_hero_cards{
+    width: 90%;
+  }
+}
+@media(max-width:984px){
+    .service_hero_cards{
+    width: 65%;
+    grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto) ;
+  }
+  .service_hero_header{
+    width: 90%;
+  }
+  .service_hero_header h1{
+    line-height: 50px;
+  }
+}
+@media(max-width:912px){
+  .service_hero_cards{
+    width: 75%;
+  }
+}
+@media(max-width:780px){
+  .service_hero_cards{
+    width: 80%;
+  }
+  .service_hero_header h1{
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .service_hero_cards{
+    margin-top: 140px;
+  }
+}
+@media(max-width:720px)
+{
+  .service_hero_cards{
+    width: 90%;
+  }
+  .service_hero_header{
+    height: 1px;
+  }
+} 
+@media(max-width:630px){
+  .service_hero_cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .card{
+    width: 100%;
+  }
+}
+.green{
+  color: #0cbe12;
+  font-weight: 600;
+}
+.signature-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.signature-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  width: 100%;
+  height: 70%;
+  background-image: url('../images/Vector\ 1\ \(1\).png'); /* You can change this to a more "signature-style" line */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  pointer-events: none;
+}
+
+
+@media (max-width: 630px) {
+  .service_hero_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 80%;
+    align-items: center;
+  }
+  
+
+  .card {
+    width: 100%;
+  }
+
+  .show_more_button {
+    display: block;
+    margin: 0px auto 0px auto;
+    width: 80%;
+    padding: 12px 24px;
+    background-color: #08830c;
+    color: #ffff;
+
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 -20px 60px #08830ca3;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .show_more_button:hover {
+    background-color: #5fd396;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

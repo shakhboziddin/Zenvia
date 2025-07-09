@@ -1,27 +1,40 @@
 import React, { useState } from 'react'
 import LogoItem from '../images/logo/Frame white.png'
 import LogoText from '../images/logo/Group white.png'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import './navbar.css'
 import { FiAlignRight, FiX } from "react-icons/fi";
+import { useNavigate } from 'react-router-dom'
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
+  const navigate = useNavigate()
+
+  const handleHome = () => {
+    navigate('/')
+  }
+
+
+
+
+
+
   return (
     <>
       <div className={`navbar_main ${isMenuOpen ? 'navbar_active' : ''}`}>
-        <div className='navbar_logo'>
+        <div onClick={handleHome} className='navbar_logo'>
           <img src={LogoItem} className='navbar_logo_item' alt="" />
           <img src={LogoText} className='navbar_logo_text' alt="" />
         </div>
 
         <div className='navbar_text'>
-          <a href="#employees">AI Team</a>
-          <a href="#solutions">Personalized Systems</a>
-          <a href="#works">Case Studies</a>
+          <a href="/#employees">AI Team</a>
+          <a href="/#solutions">Personalized Systems</a>
+          <a href="/#works">Case Studies</a>
         </div>
 
         <div className="navbar_btn">
