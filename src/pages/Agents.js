@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './agents.css';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import {
-  HiOutlineSpeakerphone,
-  HiOutlineUserGroup
-} from 'react-icons/hi';
-import {
-  FaRobot,
-  FaRocket,
-  FaCalendarAlt,
-  FaLightbulb
-} from 'react-icons/fa';
+import { HiOutlineSpeakerphone } from "react-icons/hi";
+import { AiOutlineCalendar } from "react-icons/ai";
+import { BsRobot } from "react-icons/bs";
+import { FiHeadphones } from "react-icons/fi";
+import { MdOutlineAlarm } from "react-icons/md";
+import { AiOutlineForm } from "react-icons/ai";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { SiZapier } from "react-icons/si";
+
+
 
 function Agents() {
   const ref = useRef(null);
@@ -78,19 +78,19 @@ function Agents() {
 
   const icons = [
     <HiOutlineSpeakerphone />,
-    <FaCalendarAlt />,
-    <FaRobot />,
-    <FaRocket />,
-    <FaLightbulb />,
-    <HiOutlineUserGroup />,
-    <FaLightbulb />,
-    <FaLightbulb />,
+    <AiOutlineCalendar />,
+    <BsRobot />,
+    <FiHeadphones />,
+    <MdOutlineAlarm />,
+    <AiOutlineForm />,
+    <BsPersonWorkspace />,
+    <SiZapier />,
   ];
 
   const visibleCards = isMobile && !showAllCards ? cardData.slice(0, 2) : cardData;
 useEffect(() => {
   document.body.style.overflow = activePopup !== null ? 'hidden' : 'auto';
-}, [activePopup]);
+}, [activePopup]);  
  return (
   <>
     <div className='agent'>
