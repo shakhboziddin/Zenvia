@@ -1,9 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './agents.css';
 import { motion, useAnimation, useInView } from 'framer-motion';
-
-import { HiOutlineSpeakerphone, HiOutlineUserGroup } from 'react-icons/hi';
-import { FaRobot, FaRocket, FaCalendarAlt, FaLightbulb } from 'react-icons/fa';
+import {
+  HiOutlineSpeakerphone,
+  HiOutlineUserGroup
+} from 'react-icons/hi';
+import {
+  FaRobot,
+  FaRocket,
+  FaCalendarAlt,
+  FaLightbulb
+} from 'react-icons/fa';
 
 function Agents() {
   const ref = useRef(null);
@@ -71,18 +78,21 @@ function Agents() {
 
   const icons = [
     <HiOutlineSpeakerphone />,
-    <FaRobot />,
-    <HiOutlineUserGroup />,
-    <FaRocket />,
     <FaCalendarAlt />,
+    <FaRobot />,
+    <FaRocket />,
+    <FaLightbulb />,
+    <HiOutlineUserGroup />,
     <FaLightbulb />,
     <FaLightbulb />,
-    <FaLightbulb />
   ];
 
   const visibleCards = isMobile && !showAllCards ? cardData.slice(0, 2) : cardData;
-
-  return (
+useEffect(() => {
+  document.body.style.overflow = activePopup !== null ? 'hidden' : 'auto';
+}, [activePopup]);
+ return (
+  <>
     <div className='agent'>
       <div className='elipse_div'></div>
 
@@ -168,22 +178,24 @@ function Agents() {
             Show More
           </button>
         )}
-
-        {activePopup !== null && (
-          <div className="popup_overlay" onClick={() => setActivePopup(null)}>
-            <div className="card_content_popup" onClick={(e) => e.stopPropagation()}>
-              <button className="popup_close" onClick={() => setActivePopup(null)}>×</button>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div className="card_icon">{icons[activePopup]}</div>
-                <h1 className="card_content_popup_h1">{cardData[activePopup].title}</h1>
-              </div>
-              <p className="card_content_popup_p">{cardData[activePopup].popup}</p>
-            </div>
-          </div>
-        )}
       </motion.div>
     </div>
-  );
+
+    {/* FIXED POPUP OUTSIDE MAIN CONTAINER */}
+    {activePopup !== null && (
+      <div className="popup-overlay" onClick={() => setActivePopup(null)}>
+        <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+          <button className="popup_close" onClick={() => setActivePopup(null)}>×</button>
+          <div className="popup_header">
+            <div className="card_icon">{icons[activePopup]}</div>
+            <h1 className="card_content_popup_h1">{cardData[activePopup].title}</h1>
+          </div>
+          <p className="card_content_popup_p">{cardData[activePopup].popup}</p>
+        </div>
+      </div>
+    )}
+  </>
+);
 }
 
 export default Agents;

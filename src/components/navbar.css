@@ -22,7 +22,6 @@ backdrop-filter: blur(7.4px);
 
 .navbar_main.navbar_active {
   /* transform: scale(0.97); */
-  filter: blur(0.3px) brightness(0.95);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
   border-bottom: none;
 }
