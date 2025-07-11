@@ -9,7 +9,7 @@ import { MdOutlineAlarm } from "react-icons/md";
 import { AiOutlineForm } from "react-icons/ai";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { SiZapier } from "react-icons/si";
-
+import ParticlesBackground from '../components/Particles';
 
 
 function Agents() {
@@ -95,7 +95,7 @@ useEffect(() => {
   <>
     <div className='agent'>
       <div className='elipse_div'></div>
-
+      <ParticlesBackground/>
       <div className='service_header_main'>
         <motion.div
           ref={ref}
@@ -119,7 +119,7 @@ useEffect(() => {
 
       <motion.div
         ref={ref}
-        initial="hidden"
+        initial="hidden"  
         animate={controls}
         variants={{
           hidden: { opacity: 0, y: 50, filter: "blur(10px)" },

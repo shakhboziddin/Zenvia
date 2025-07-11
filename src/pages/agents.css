@@ -15,6 +15,7 @@
   position: absolute;
   background-position: center;
   background-size: cover;
+  pointer-events: none;
 }
 
 .service_header_main {

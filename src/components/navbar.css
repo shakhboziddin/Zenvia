@@ -148,7 +148,6 @@ backdrop-filter: blur(7.4px);
   z-index: 99;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  filter: blur(0.3px) brightness(0.95);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
 }
 
