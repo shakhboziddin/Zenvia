@@ -112,9 +112,7 @@ useEffect(() => {
           }}
           className="service_hero_ai"
         >
-          <div className='service_hero_ai_dot'>
-            <div className='service_hero_ai_dot_inside'></div>
-          </div>
+
           <h3>Our Services.</h3>
         </motion.div>
       </div>

@@ -18,7 +18,7 @@
 }
 
 .service_header_main {
-  width: 160px;
+  width: 140px;
   margin: auto;
 }
 
@@ -104,10 +104,15 @@
 }
 
 .card {
-  border: 1px solid #abee0049;
+  border: 1px solid #abee002f;
   border-radius: 10px;
   padding: 1.5rem;
-  background-color: #00000059;
+  /* From https://css.glass */
+background: rgba(0, 0, 0, 0.233);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
   color: white;
   text-align: left;
   width: 100%; 
@@ -126,7 +131,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
   color: white;
-  background: linear-gradient(180deg, #e1ff009d 0%, #a8ff00 100%);
+  background: linear-gradient(180deg, #c5df049d 0%, #90d506 100%);
   width: 15%;
   display: flex;
   align-items: center;

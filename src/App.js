@@ -1,32 +1,57 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
+import { useInView } from 'react-intersection-observer';
 
-// Lazy loaded components
+// Lazy load components
 const Home = React.lazy(() => import('./pages/Home'));
 const Agents = React.lazy(() => import('./pages/Agents'));
 const Velocity = React.lazy(() => import('./components/Velocity'));
+const Mission = React.lazy(()=> import('./components/Mission'))
 
 function App() {
-  const [loadHome, setLoadHome] = useState(false);
-  const [loadAgents, setLoadAgents] = useState(false);
-  const [loadVelocity, setLoadVelocity] = useState(false);
-
-  useEffect(() => {
-    setLoadHome(true);
-    setTimeout(() => setLoadAgents(true), 500); // load 0.5s later
-    setTimeout(() => setLoadVelocity(true), 1000); // load another 0.5s later
-  }, []);
+  const [homeRef, homeInView] = useInView({ triggerOnce: true });
+  const [agentsRef, agentsInView] = useInView({ triggerOnce: true });
+  const [velocityRef, velocityInView] = useInView({ triggerOnce: true });
+  const [missionRef, missionInView] = useInView({triggerOnce: true});
 
   return (
-    <div className="main_div">
-      <Suspense fallback={<div>Loading...</div>}>
-        {loadHome && <Home />}
-        <section id="/#employees">
-          {loadAgents && <Agents />}
-        </section>
-        {/* Optional: Uncomment if you want Velocity to load after Agents */}
-        {/* {loadVelocity && <Velocity />} */}
-      </Suspense>
+    <div className='main_div'>
+
+      {/* Home Section */}
+      <div ref={homeRef}>
+        {homeInView && (
+          <Suspense fallback={<div>Loading Home...</div>}>
+            <Home />
+          </Suspense>
+        )}
+      </div>
+
+      {/* Velocity Section (optional, currently commented) */}
+      {/* 
+      <div ref={velocityRef}>
+        {velocityInView && (
+          <Suspense fallback={<div>Loading Velocity...</div>}>
+            <Velocity />
+          </Suspense>
+        )}
+      </div>
+      */}
+
+      {/* Agents Section */}
+      <section id='/#employees' ref={agentsRef}>
+        {agentsInView && (
+          <Suspense fallback={<div>Loading Agents...</div>}>
+            <Agents />
+          </Suspense>
+        )}
+      </section>
+            <section id='/#mission' ref={missionRef}>
+        {agentsInView && (
+          <Suspense fallback={<div>Loading Mission...</div>}>
+            <Mission />
+          </Suspense>
+        )}
+      </section>
     </div>
   );
 }

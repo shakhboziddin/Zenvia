@@ -1,0 +1,118 @@
+.mission_main_div{
+  background-color: #0C090A;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.mission_header_main{
+    width: 125px;
+    margin: auto;
+    padding: 40px auto 0px auto;
+
+}
+
+.mission_hero_ai {
+    padding: 7px 17px;
+    border-radius: 20px;
+    border-top: 1.5px solid rgba(128, 128, 128, 0.313);
+    border-right: 1px solid rgba(128, 128, 128, 0.146);
+    border-left: 1px solid rgba(128, 128, 128, 0.146);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.125);
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: 100;
+}
+.mission_hero_header_button{
+      background: linear-gradient(180deg, #d4ff00, #7ad200);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 32%;
+    margin: 80px auto 0px auto;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px;
+    line-height: 22px;
+    text-shadow: 0 0 3px white;
+    cursor: pointer;
+}
+
+.mission_hero_ai h3 {
+    font-weight: 200;
+    color: #eaeaea;
+    font-size: 16px;
+}
+.mission_btn_main{
+    /* width: 90%; */
+    text-align: center;
+}
+.mission_header_text{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+    text-align: center;
+}
+.mission_header_h1{
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 44px;
+    margin-bottom: 22px;
+}
+.mission_header_p{
+    color: #c8c8c8;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+}
+.green2{
+    color:#B8FF00;
+    text-transform: capitalize;
+}
+
+@media(max-width: 1000px){
+    .mission_header_h1{
+        font-size: 40px;
+    }
+    .mission_header_p{
+        font-size: 15px;
+        width: 60%;
+        margin: auto;
+    }
+    .mission_hero_header_button{
+        width: 60%;
+    }
+}
+@media(max-width:471px){
+    
+    .mission_header_p{
+        width: 80%;
+    }
+    .mission_hero_header_button{
+        width: 80%;
+    }
+}
+@media(max-width:397px){
+    .mission_header_h1{
+        font-size: 30px;
+    }
+    .mission_header_p{
+        font-size: 13px;
+    }
+    .mission_hero_header_button{
+        font-size: 20px;
+    }
+}
