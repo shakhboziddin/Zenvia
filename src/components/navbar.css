@@ -165,7 +165,6 @@ backdrop-filter: blur(7.4px);
   color: white;
   text-decoration: none;
     background-color: #0d12212a;  
-  filter: blur(0.3px) brightness(0.95);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(128, 128, 128, 0.234);
   width: 65%;

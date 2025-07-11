@@ -12,7 +12,7 @@
 
 }
 .elipse_bg{
-    background-image: url(../images/bg/Ellipse.png);
+    background: url(../images/bg/Union2.png);
   width: 100%;
   height: 200vh;
   background-repeat: no-repeat;
@@ -72,7 +72,7 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
     flex-direction: column;
     text-align: center;
@@ -96,6 +96,7 @@
     margin: 10px auto;
     color: rgb(213, 213, 213);
     width: 80%;
+    line-height: 20px;
 }
 .green2{
     color:#B8FF00;
@@ -133,5 +134,15 @@
     }
     .mission_hero_header_button{
         font-size: 20px;
+    }
+}
+@media(max-width:440px){
+    .mission_hero_header_button{
+        font-size: 20px;
+        padding: 5px;
+        width: 80%;
+    }
+    .mission_hero_header_h5{
+        font-size: 13px;
     }
 }
