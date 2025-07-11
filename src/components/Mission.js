@@ -52,7 +52,7 @@ function Mission() {
               ref={btnRef}
               initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
               animate={btnInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ duration: 1, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Link to={'/contact'} className='mission_hero_header_button'>
                 Discover Your AI Potential <span className='free_call'>Book a Free Call</span>
@@ -64,7 +64,7 @@ function Mission() {
               ref={disclaimerRef}
               initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
               animate={disclaimerInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-              transition={{ duration: 1.2, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <h5 className='mission_hero_header_h5'>
                 <span className='disclaimer'>⚠️ Disclaimer:</span> This isn’t a sales call —
